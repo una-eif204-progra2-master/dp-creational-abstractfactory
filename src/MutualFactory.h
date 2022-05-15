@@ -6,13 +6,13 @@
 #define DP_CREATIONAL_ABSTRACTFACTORY_MUTUALFACTORY_H
 
 
-#include "IAccountFactory.h"
+#include "IFinanceEntityFactory.h"
 
-class MutualFactory : public IAccountFactory  {
+class MutualFactory : public IFinanceEntityFactory{
 public:
-    IBankAccount *createBankAccount(string accountType) const override;
+    IAccount *createAccount() const override;
 
-    IPlanAccount *createPlanAccount(string accountType) const override;
+    IPlan *createPlan() const override;
 };
 
 

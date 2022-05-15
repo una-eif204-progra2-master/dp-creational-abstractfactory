@@ -4,19 +4,17 @@
 
 #ifndef DP_CREATIONAL_FACTORY_FACTORY_H
 #define DP_CREATIONAL_FACTORY_FACTORY_H
-
-
-#include "IAccountFactory.h"
+#include "IFinanceEntityFactory.h"
 
 /**
  * Concrete BankFactory override the factory method in order to change the
  * resulting account's type.
  */
-class BankFactory : public IAccountFactory {
+class BankFactory : public IFinanceEntityFactory {
 public:
-    IBankAccount *createBankAccount(string accountType) const override;
+    IAccount *createAccount() const override;
 
-    IPlanAccount *createPlanAccount(string accountType) const override;
+    IPlan *createPlan() const override;
 };
 
 

@@ -3,11 +3,13 @@
 //
 
 #include "MutualFactory.h"
+#include "MutualAccount.h"
+#include "MutualPlan.h"
 
-IBankAccount *MutualFactory::createBankAccount(string accountType) const {
-    return nullptr;
+IAccount *MutualFactory::createAccount() const {
+    return new MutualAccount;
 }
 
-IPlanAccount *MutualFactory::createPlanAccount(string accountType) const {
-    return nullptr;
+IPlan *MutualFactory::createPlan() const {
+    return new MutualPlan;
 }

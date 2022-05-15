@@ -2,8 +2,9 @@
 // Created by Maikol Guzman on 3/18/22.
 //
 #include <iostream>
-#include "IAccountFactory.h"
+#include "IFinanceEntityFactory.h"
 #include "BankFactory.h"
+#include "MutualFactory.h"
 
 using namespace std;
 
@@ -11,15 +12,25 @@ int main() {
     cout << "Welcome to the UNA! (VIRTUAL)" << endl;
     cout << "Creation pattern - Abstract BankFactory" << endl << endl;
 
-    IAccountFactory* accountFactory = new BankFactory();
-    IBankAccount* bankBusinessAccount;
-    IBankAccount* bankPersonalAccount;
+    IFinanceEntityFactory* financeEntityFactory;
+    IAccount* account;
+    IPlan* plan;
 
-    bankBusinessAccount = accountFactory->createBankAccount("BUSINESS");
-    bankPersonalAccount = accountFactory->createBankAccount("PERSONAL");
+    financeEntityFactory = new BankFactory;
+    account = financeEntityFactory->createAccount();
+    plan = financeEntityFactory->createPlan();
 
-    cout << "Business Rate: " << bankBusinessAccount->calculateInterestRate(500) << endl;
-    cout << "Personal Rate: " << bankPersonalAccount->calculateInterestRate(500) << endl;
+    cout << "BANK -----------" << endl;
+    cout << "Account Rate   : " << account->calculateInterestRate(500) << endl;
+    cout << "Plan Bill      : " << plan->calculateBill(500) << endl;
+
+    financeEntityFactory = new MutualFactory;
+    account = financeEntityFactory->createAccount();
+    plan = financeEntityFactory->createPlan();
+
+    cout << "MUTUAL ---------" << endl;
+    cout << "Account Rate   : " << account->calculateInterestRate(500) << endl;
+    cout << "Plan Bill      : " << plan->calculateBill(500) << endl;
 
     return 0;
 }

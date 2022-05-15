@@ -3,29 +3,13 @@
 //
 
 #include "BankFactory.h"
-#include "PersonalAccount.h"
-#include "BusinessAccount.h"
-#include "DomesticPlan.h"
-#include "CommercialPlan.h"
+#include "BankAccount.h"
+#include "BankPlan.h"
 
-IBankAccount *BankFactory::createBankAccount(string accountType) const {
-    if(accountType == "BUSINESS") {
-        return new BusinessAccount;
-    }
-    else if(accountType == "PERSONAL") {
-        return new PersonalAccount;
-    }
-
-    return nullptr;
+IAccount *BankFactory::createAccount() const {
+    return new BankAccount;
 }
 
-IPlanAccount *BankFactory::createPlanAccount(string accountType) const {
-    if(accountType == "COMMERCIAL") {
-        return new CommercialPlan;
-    }
-    else if(accountType == "DOMESTIC") {
-        return new DomesticPlan;
-    }
-
-    return nullptr;
+IPlan *BankFactory::createPlan() const {
+    return new BankPlan;
 }
