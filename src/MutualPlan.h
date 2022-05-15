@@ -8,6 +8,9 @@
 
 #include "IPlan.h"
 
+/**
+ * Concrete Mutual Plan are created by corresponding Concrete Factories.
+ */
 class MutualPlan : public IPlan{
 private:
     float rate;

@@ -6,7 +6,7 @@
 #define DP_CREATIONAL_ABSTRACTFACTORY_IPLAN_H
 
 /**
- * The Plan interface declares the operations that all concrete accounts must
+ * The Plan interface declares the operations that all concrete plans must
  * implement.
  */
 class IPlan {

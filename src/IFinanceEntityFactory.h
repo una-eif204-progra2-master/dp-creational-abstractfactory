@@ -12,9 +12,12 @@
 using namespace std;
 
 /**
- * The Account BankFactory interface declares the factory method that is supposed to return an
- * object of a Account class. The Account's subclasses usually provide the
- * implementation of this method.
+ * The Abstract Factory interface declares a set of methods that return
+ * different abstract objects. These objects are called a family and are
+ * related by a high-level theme or concept. Objects of one family are usually
+ * able to collaborate among themselves. A family of objects may have several
+ * variants, but the objects of one variant are incompatible with objects of
+ * another.
  */
 class IFinanceEntityFactory {
 public:

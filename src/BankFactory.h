@@ -7,8 +7,10 @@
 #include "IFinanceEntityFactory.h"
 
 /**
- * Concrete BankFactory override the factory method in order to change the
- * resulting account's type.
+ * Concrete Factories produce a family of banks that belong to a single
+ * variant. The factory guarantees that resulting banks are compatible. Note
+ * that signatures of the Concrete Factory's methods return an abstract mutual,
+ * while inside the method a concrete bank is instantiated.
  */
 class BankFactory : public IFinanceEntityFactory {
 public:

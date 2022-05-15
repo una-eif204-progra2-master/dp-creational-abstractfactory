@@ -7,6 +7,9 @@
 
 #include "IAccount.h"
 
+/**
+ * Concrete Bank Account are created by corresponding Concrete Factories.
+ */
 class BankAccount : public IAccount{
 private:
     float rate;

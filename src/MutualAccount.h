@@ -8,6 +8,9 @@
 
 #include "IAccount.h"
 
+/**
+ * Concrete Mutual Account are created by corresponding Concrete Factories.
+ */
 class MutualAccount : public IAccount {
 private:
     float rate;

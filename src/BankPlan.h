@@ -8,6 +8,9 @@
 
 #include "IPlan.h"
 
+/**
+ * Concrete Bank Plan are created by corresponding Concrete Factories.
+ */
 class BankPlan : public IPlan{
 private:
     float rate;
